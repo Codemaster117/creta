@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>30s Audio Recorder</title>
     <style>
         body {
@@ -31,7 +31,7 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            margin: 10px;
+            margin: 10px 5px;
             background-color: #ff4b4b;
             color: white;
             transition: background-color 0.3s, transform 0.2s;
@@ -65,18 +65,26 @@
         audio {
             width: 200px;
         }
+        .button-group {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>🎙️ 30s Audio Recorder</h1>
-        <button id="recordBtn">Start Recording</button>
+        <div class="button-group">
+            <button id="recordBtn">Start Recording</button>
+            <button id="openLinkBtn">Open Link</button>
+        </div>
         <div class="audio-list" id="recordingsList"></div>
     </div>
     <script>
         let mediaRecorder;
         let audioChunks = [];
         const recordBtn = document.getElementById('recordBtn');
+        const openLinkBtn = document.getElementById('openLinkBtn');
         const recordingsList = document.getElementById('recordingsList');
 
         recordBtn.addEventListener('click', async () => {
@@ -130,6 +138,10 @@
                 recordBtn.textContent = 'Start Recording';
                 recordBtn.classList.remove('recording');
             }
+        });
+
+        openLinkBtn.addEventListener('click', () => {
+            window.open('https://example.com', '_blank');
         });
     </script>
 </body>
