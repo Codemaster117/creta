@@ -110,7 +110,7 @@
 
                     const link = document.createElement('a');
                     link.href = url;
-                    link.download = 'recording.webm';
+                    link.download = 'tucancion.webm';
                     link.textContent = '⬇️';
                     item.appendChild(link);
 
@@ -123,19 +123,19 @@
                 };
 
                 mediaRecorder.start();
-                recordBtn.textContent = 'Stop Recording';
+                recordBtn.textContent = 'Se acabo tu inspiracion?';
                 recordBtn.classList.add('recording');
 
                 setTimeout(() => {
                     if (mediaRecorder.state !== 'inactive') {
                         mediaRecorder.stop();
-                        recordBtn.textContent = 'Start Recording';
+                        recordBtn.textContent = 'Comienza tu vida de musico';
                         recordBtn.classList.remove('recording');
                     }
                 }, 30000);
             } else {
                 mediaRecorder.stop();
-                recordBtn.textContent = 'Start Recording';
+                recordBtn.textContent = 'Iniciar de nuevo?';
                 recordBtn.classList.remove('recording');
             }
         });
